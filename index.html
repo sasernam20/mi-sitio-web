@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAINCRO | Asociación Agroindustrial de la Carne Región Orinoquia
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      :root {
+        --primary: #004B87;
+        /* azul petróleo */
+        --secondary: #444;
+        /* gris oscuro */
+        --light: #f8f9fa;
+        --white: #ffffff;
+        --gray-light: #e9ecef;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--secondary);
+        line-height: 1.6;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      /* Header */
+      header {
+        background-color: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+      .logo {
+        height: 60px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav ul li {
+        margin-left: 30px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: var(--secondary);
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      nav ul li a:hover {
+        color: var(--primary);
+      }
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--primary);
+        cursor: pointer;
+      }
+      /* Hero Banner */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://d268zs2sdbzvo0.cloudfront.net/68420a1d20016a45c0c29922_bc6cccda-dcba-4e4a-afa9-dfa2a693201a_ChatGPT-Image-Jun-5,-2025,-05_50_19-PM.png') no-repeat center center/cover;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+        padding-top: 80px;
+      }
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+      .btn {
+        display: inline-block;
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #003a6a;
+      }
+      /* About Section */
+      .section {
+        padding: 80px 0;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--primary);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .about-card {
+        background-color: var(--white);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .about-card i {
+        font-size: 40px;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+      .about-card h3 {
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+      /* Partners */
+      .partners {
+        background-color: var(--gray-light);
+        padding: 50px 0;
+      }
+      .partners-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 20px 0;
+      }
+      .partner-logo {
+        scroll-snap-align: start;
+        flex: 0 0 auto;
+        width: 200px;
+        height: 100px;
+        margin-right: 30px;
+        background-color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+      .partner-logo img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+      /* Board Members */
+      .board-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+      .board-member {
+        background-color: var(--white);
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .member-photo {
+        height: 250px;
+        background-color: #ddd;
+        background-size: cover;
+        background-position: center;
+      }
+      .member-info {
+        padding: 20px;
+      }
+      .member-info h3 {
+        color: var(--primary);
+        margin-bottom: 5px;
+      }
+      .member-info p.position {
+        font-weight: 500;
+        color: var(--secondary);
+        margin-bottom: 15px;
+      }
+      /* Services */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .service-card {
+        background-color: var(--white);
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .service-icon {
+        background-color: var(--primary);
+        color: var(--white);
+        font-size: 30px;
+        padding: 20px;
+        text-align: center;
+      }
+      .service-content {
+        padding: 20px;
+      }
+      .service-content h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+      /* Membership */
+      .membership {
+        background-color: var(--gray-light);
+      }
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+      .benefit-item i {
+        color: var(--primary);
+        margin-right: 10px;
+        margin-top: 3px;
+      }
+      .steps {
+        counter-reset: step-counter;
+        max-width: 800px;
+        margin: 0 auto 40px;
+      }
+      .step {
+        position: relative;
+        padding-left: 60px;
+        margin-bottom: 30px;
+      }
+      .step:before {
+        counter-increment: step-counter;
+        content: counter(step-counter);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      /* News */
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .news-card {
+        background-color: var(--white);
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .news-image {
+        height: 200px;
+        background-color: #ddd;
+        background-size: cover;
+        background-position: center;
+      }
+      .news-content {
+        padding: 20px;
+      }
+      .news-date {
+        color: var(--primary);
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      .news-content h3 {
+        margin-bottom: 15px;
+      }
+      /* Events */
+      .events-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .event-item {
+        background-color: var(--white);
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .event-date {
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 5px 15px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      .event-item h3 {
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+      .event-meta {
+        display: flex;
+        margin-bottom: 15px;
+      }
+      .event-meta span {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        font-size: 0.9rem;
+      }
+      .event-meta i {
+        margin-right: 5px;
+        color: var(--primary);
+      }
+      /* Contact */
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+      .contact-info h3 {
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+      .contact-detail {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+      .contact-detail i {
+        color: var(--primary);
+        margin-right: 15px;
+        margin-top: 3px;
+      }
+      .social-links {
+        display: flex;
+        margin-top: 30px;
+      }
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary);
+        color: var(--white);
+        border-radius: 50%;
+        margin-right: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+      .social-links a:hover {
+        background-color: #003a6a;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .contact-form textarea {
+        height: 150px;
+      }
+      .contact-form button {
+        background-color: var(--primary);
+        color: var(--white);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      .contact-form button:hover {
+        background-color: #003a6a;
+      }
+      .map-container {
+        height: 300px;
+        margin-top: 40px;
+        background-color: #ddd;
+      }
+      /* Footer */
+      footer {
+        background-color: var(--secondary);
+        color: var(--white);
+        padding: 50px 0 20px;
+      }
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+      .footer-col h3 {
+        color: var(--white);
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col ul li {
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--white);
+      }
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ccc;
+        font-size: 0.9rem;
+      }
+      /* Responsive */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        nav {
+          position: fixed;
+          top: 90px;
+          left: -100%;
+          width: 80%;
+          height: calc(100vh - 90px);
+          background-color: var(--white);
+          box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+          transition: left 0.3s;
+        }
+        nav.active {
+          left: 0;
+        }
+        nav ul {
+          flex-direction: column;
+          padding: 20px;
+        }
+        nav ul li {
+          margin: 0 0 20px 0;
+        }
+        .mobile-menu-btn {
+          display: block;
+        }
+        .hero {
+          height: auto;
+          padding: 120px 0 60px;
+        }
+        .section {
+          padding: 60px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="#">
+          <img src="https://d268zs2sdbzvo0.cloudfront.net/68420a1d20016a45c0c29922_ec2b4ab0-b770-4a22-ac30-28a359ca2fdd_logo_ASAINCRO.png" alt="Logo ASAINCRO" class="logo">
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars">
+          </i>
+        </button>
+        <nav id="mainNav">
+          <ul>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#about">Quiénes Somos</a>
+            </li>
+            <li>
+              <a href="#services">Servicios</a>
+            </li>
+            <li>
+              <a href="#membership">Afiliación</a>
+            </li>
+            <li>
+              <a href="#news">Noticias</a>
+            </li>
+            <li>
+              <a href="#events">Eventos</a>
+            </li>
+            <li>
+              <a href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>ASAINCRO
+        </h1>
+        <p>Asociación Agroindustrial de la Carne Región Orinoquia
+        </p>
+        </p>
+      <a href="#membership" class="btn">Afíliate ahora</a>
+      </div>
+    </section>
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">Quiénes Somos
+      </h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <i class="fas fa-bullseye">
+          </i>
+          <h3>Misión
+          </h3>
+          <p>Fortalecer y desarrollar la cadena agroindustrial de la carne en la región Orinoquia mediante la articulación de todos los eslabones productivos, promoviendo la formalización bajo el Decreto 1500 de 2007, la calidad y la innovación en los procesos.
+          </p>
+        </div>
+        <div class="about-card">
+          <i class="fas fa-eye">
+          </i>
+          <h3>Visión
+          </h3>
+          <p>Para el año 2030, ser reconocidos como la asociación líder en Colombia que representa la excelencia agroindustrial de la carne de la región Orinoquia, consolidando una cadena productiva integrada, tecnificada y sostenible.
+          </p>
+        </div>
+        <div class="about-card">
+          <i class="fas fa-history">
+          </i>
+          <h3>Nuestra Labor
+          </h3>
+          <p>Somos el enlace estratégico entre productores, cerealistas y comercializadores de toda la región de la Orinoquia, trabajando para optimizar la cadena de suministro y mejorar la calidad de los productos cárnicos que caracterizan nuestra región.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Partners -->
+  <section class="partners">
+    <div class="container">
+      <h2 class="section-title">Aliados Estratégicos
+      </h2>
+      <div class="partners-slider">
+        <div class="partner-logo">
+          <img src="https://d268zs2sdbzvo0.cloudfront.net/68420a1d20016a45c0c29922_5e5a18a3-73cb-4c1a-90b8-1d8632f4c832_invima.png" alt="INVIMA">
+        </div>
+        <div class="partner-logo">
+          <img src="https://d268zs2sdbzvo0.cloudfront.net/68420a1d20016a45c0c29922_e12db278-7cc5-441a-9a88-eb596c4bee9e_ica.png" alt="ICA">
+        </div>
+        <div class="partner-logo">
+          <img src="https://d268zs2sdbzvo0.cloudfront.net/68420a1d20016a45c0c29922_cf6f816d-03fa-4823-9aa9-07ecd03363cf_gobernacion_del_meta.png" alt="Gobierno Meta">
+        </div>
+        <div class="partner-logo">
+          <img src="https://d268zs2sdbzvo0.cloudfront.net/68420a1d20016a45c0c29922_585d4ff4-ff2f-4040-b0fd-e5b98189fca7_camara_de_comercio.png" alt="Cámaras de Comercio">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios
+      </h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-file-signature">
+            </i>
+          </div>
+          <div class="service-content">
+            <h3>Formalización y Cumplimiento Normativo
+            </h3>
+            <p>Asesoría para inscripción ante ICA e INVIMA, elaboración de planes graduales de cumplimiento, autorización sanitaria y sistemas de aseguramiento de inocuidad.
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-clipboard-check">
+            </i>
+          </div>
+          <div class="service-content">
+            <h3>Desarrollo de Sistemas de Calidad
+            </h3>
+            <p>Implementación de HACCP, BPM, POES, control de patógenos, residuos y sistemas de trazabilidad "de la granja a la mesa".
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-graduation-cap">
+            </i>
+          </div>
+          <div class="service-content">
+            <h3>Capacitación Técnica
+            </h3>
+            <p>Formación para inspectores, buenas prácticas pecuarias, técnicas de sacrificio humanitario, cortes especializados y programas de bioseguridad.
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-snowflake">
+            </i>
+          </div>
+          <div class="service-content">
+            <h3>Cadena de Frío y Transporte
+            </h3>
+            <p>Asesoría en mantenimiento de cadena de frío, autorización de transporte, estándares sanitarios y sistemas de empaque y etiquetado.
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-globe-americas">
+            </i>
+          </div>
+          <div class="service-content">
+            <h3>Comercialización y Exportación
+            </h3>
+            <p>Preparación para mercados internacionales, certificación sanitaria, desarrollo de mercados y promoción de productos cárnicos de la Orinoquia.
+            </p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-handshake">
+            </i>
+          </div>
+          <div class="service-content">
+            <h3>Modelo Asociativo
+            </h3>
+            <p>Estructuración de esquemas asociativos, agroindustria integrada, sostenibilidad productiva y fortalecimiento de PYMES del sector.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Membership -->
+  <section class="section membership" id="membership">
+    <div class="container">
+      <h2 class="section-title">Afiliación
+      </h2>
+      <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Beneficios de ser miembro
+      </h3>
+      <div class="benefits-grid">
+        <div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Asesoría especializada en cumplimiento del Decreto 1500 de 2007
+            </p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Capacitaciones técnicas especializadas
+            </p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Acceso a programas de formalización
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Representación gremial ante autoridades
+            </p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Participación en eventos sectoriales
+            </p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Acceso a información técnica actualizada
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Oportunidades de comercialización
+            </p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Descuentos en servicios especializados
+            </p>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle">
+            </i>
+            <p>Participación en ruedas de negocios
+            </p>
+          </div>
+        </div>
+      </div>
+      <h3 style="text-align: center; margin-bottom: 30px; color: var(--primary);">Cómo afiliarse
+      </h3>
+      <div class="steps">
+        <div class="step">
+          <h4>Completa el formulario de solicitud
+          </h4>
+          <p>Descarga el formulario de afiliación y complétalo con tus datos personales y profesionales.
+          </p>
+        </div>
+        <div class="step">
+          <h4>Reúne los documentos requeridos
+          </h4>
+          <p>Documentos de identificación, registros sanitarios y demás requisitos según tu actividad en la cadena cárnica.
+          </p>
+        </div>
+        <div class="step">
+          <h4>Envía tu solicitud
+          </h4>
+          <p>Envía los documentos completos al correo electrónico de la asociación o preséntalos en nuestra sede.
+          </p>
+        </div>
+        <div class="step">
+          <h4>Realiza el pago de la cuota
+          </h4>
+          <p>Una vez aprobada tu solicitud, realiza el pago de la cuota de afiliación y membresía anual.
+          </p>
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <a href="#" class="btn">Descargar formulario</a>
+        <a href="#" class="btn" style="background-color: var(--secondary); margin-left: 15px;">Afiliación en línea</a>
+      </div>
+    </div>
+  </section>
+  <!-- News -->
+  <section class="section" id="news">
+    <div class="container">
+      <h2 class="section-title">Últimas Noticias
+      </h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-image" style="https://d268zs2sdbzvo0.cloudfront.net/68420a1d20016a45c0c29922_5e5a18a3-73cb-4c1a-90b8-1d8632f4c832_invima.png">
+          </div>
+          <div class="news-content">
+            <div class="news-date">15 Junio 2025
+            </div>
+            <h3>ASAINCRO fortalece alianza con INVIMA
+            </h3>
+            <p>Nueva colaboración para mejorar los procesos de inspección y vigilancia en plantas de beneficio de la región Orinoquia...
+            </p>
+            <a href="#" class="btn" style="display: inline-block; margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">Leer más</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('news2.jpg');">
+          </div>
+          <div class="news-content">
+            <div class="news-date">2 Junio 2025
+            </div>
+            <h3>Avances en implementación del Decreto 1500
+            </h3>
+            <p>ASAINCRO reporta aumento del 35% en formalización de productores y comercializadores de cárnicos en la región...
+            </p>
+            <a href="#" class="btn" style="display: inline-block; margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">Leer más</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-image" style="background-image: url('news3.jpg');">
+          </div>
+          <div class="news-content">
+            <div class="news-date">20 Mayo 2025
+            </div>
+            <h3>Nuevo programa de certificación de calidad
+            </h3>
+            <p>Lanzamiento de sello de calidad ASAINCRO para productos cárnicos que cumplen con los más altos estándares...
+            </p>
+            <a href="#" class="btn" style="display: inline-block; margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Events -->
+  <section class="section" id="events" style="background-color: var(--gray-light);">
+    <div class="container">
+      <h2 class="section-title">Próximos Eventos
+      </h2>
+      <div class="events-list">
+        <div class="event-item">
+          <div class="event-date">25 Julio 2025
+          </div>
+          <h3>Taller de Cortes Gourmet
+          </h3>
+          <div class="event-meta">
+            <span><i class="fas fa-clock">
+              </i> 8:00 AM - 5:00 PM</span>
+            <span><i class="fas fa-map-marker-alt">
+              </i> Villavicencio, Meta</span>
+          </div>
+          <p>Capacitación especializada para carniceros sobre técnicas avanzadas de corte y presentación de productos cárnicos premium de la Orinoquia.
+          </p>
+          <a href="#" class="btn" style="display: inline-block; margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">Registrarse</a>
+        </div>
+        <div class="event-item">
+          <div class="event-date">10-12 Agosto 2025
+          </div>
+          <h3>Foro de Formalización Empresarial
+          </h3>
+          <div class="event-meta">
+            <span><i class="fas fa-clock">
+              </i> 9:00 AM - 4:00 PM</span>
+            <span><i class="fas fa-map-marker-alt">
+              </i> Villavicencio, Meta</span>
+          </div>
+          <p>Jornada informativa sobre los procesos de formalización y requisitos sanitarios según el Decreto 1500 de 2007 para productores y comercializadores de cárnicos.
+          </p>
+          <a href="#" class="btn" style="display: inline-block; margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">Registrarse</a>
+        </div>
+        <div class="event-item">
+          <div class="event-date">15 Septiembre 2025
+          </div>
+          <h3>Rueda de Negocios Sector Cárnico
+          </h3>
+          <div class="event-meta">
+            <span><i class="fas fa-clock">
+              </i> 8:00 AM - 6:00 PM</span>
+            <span><i class="fas fa-map-marker-alt">
+              </i> Villavicencio, Meta</span>
+          </div>
+          <p>Encuentro empresarial para conectar productores, procesadores y comercializadores de la cadena cárnica de la Orinoquia con compradores potenciales.
+          </p>
+          <a href="#" class="btn" style="display: inline-block; margin-top: 15px; padding: 8px 20px; font-size: 0.9rem;">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contacto
+      </h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Información de contacto
+          </h3>
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt">
+            </i>
+            <div>
+              <p>
+                <strong>Dirección:</strong>
+              </p>
+              <p>Villavicencio - Meta, Colombia
+              </p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-envelope">
+            </i>
+            <div>
+              <p>
+                <strong>Email:</strong>
+              </p>
+              <p>asaincro.proyectos@gmail.com
+              </p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f">
+              </i></a>
+            <a href="#"><i class="fab fa-twitter">
+              </i></a>
+            <a href="#"><i class="fab fa-linkedin-in">
+              </i></a>
+            <a href="#"><i class="fab fa-instagram">
+              </i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="tel" placeholder="Teléfono">
+            <textarea placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255180.0755817896!2d-73.25462984179686!3d4.125355899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3e2e8a6f9d85b5%3A0x4a1ada1c3e0b9a3f!2sVillavicencio%2C%20Meta!5e0!3m2!1ses!2sco!4v1680000000000!5m2!1ses!2sco" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>ASAINCRO
+          </h3>
+          <p>Asociación Agroindustrial de la Carne Región Orinoquia. Fortaleciendo la cadena cárnica desde el Decreto 1500 de 2007.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Enlaces rápidos
+          </h3>
+          <ul>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#about">Quiénes Somos</a>
+            </li>
+            <li>
+              <a href="#services">Servicios</a>
+            </li>
+            <li>
+              <a href="#membership">Afiliación</a>
+            </li>
+            <li>
+              <a href="#news">Noticias</a>
+            </li>
+            <li>
+              <a href="#events">Eventos</a>
+            </li>
+            <li>
+              <a href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Servicios
+          </h3>
+          <ul>
+            <li>
+              <a href="#">Formalización Normativa</a>
+            </li>
+            <li>
+              <a href="#">Sistemas de Calidad</a>
+            </li>
+            <li>
+              <a href="#">Capacitación Técnica</a>
+            </li>
+            <li>
+              <a href="#">Cadena de Frío</a>
+            </li>
+            <li>
+              <a href="#">Comercialización</a>
+            </li>
+            <li>
+              <a href="#">Modelo Asociativo</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto
+          </h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt">
+              </i> Villavicencio, Meta
+            </li>
+            <li>
+              <i class="fas fa-envelope">
+              </i> asaincro.proyectos@gmail.com
+            </li>
+            <li>
+              <i class="fas fa-phone">
+              </i> +57 123 456 7890
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 ASAINCRO - Asociación Agroindustrial de la Carne Región Orinoquia. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    }
+                                  );
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        if(this.getAttribute('href') === '#') return;
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          }
+                         );
+          // Close mobile menu if open
+          if(mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        }
+      }
+                             );
+    }
+                                                     );
+    // Sticky header on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.classList.toggle('sticky', window.scrollY > 0);
+    }
+                           );
+  </script>
+  </body>
+</html>
